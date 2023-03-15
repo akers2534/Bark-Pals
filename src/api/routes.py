@@ -21,3 +21,18 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    #return jsonify(list(data.keys()))
+    user = User.query.filter_by(username=data.get("username", None)).first()
+    if user: 
+        if user.password == data.get("password",None):
+            return jsonify(token=create_access_token(data.get("username", None)))
+    return jsonify(message="invalid login"), 401
+
+@api.route('/secure', methods=['GET'])
+@jwt_required()
+def test():
+    return jsonify(message="hello world",username=get_jwt_identity())

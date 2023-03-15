@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -22,9 +23,8 @@ class User(db.Model):
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(250), nullable=False)
-    date_created = db.Column(db.DateTime(timezone=True), default= func.now())
-    author = db.Column(db.Integer,db.Foreignkey('parks.id'), nullable=False)
-    parks.id = db.Column(db.Integer, db.Foreignkey('parks.id'), nullable=False)
+    date_created = db.Column(db.DateTime(timezone=True), default= datetime.now)
+    #author = db.Column(db.Integer,db.ForeignKey('post.id'), nullable=False)
 
     def __repr__(self):
         return f'<Comment {self.email}>'
@@ -40,9 +40,8 @@ class Comment(db.Model):
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(250), nullable=False)
-    date_created = db.Column(db.DateTime(timezone=True), default= func.now())
-    author = db.Column(db.Integer,db.Foreignkey('parks.id'), nullable=False)
-    parks.id = db.Column(db.Integer, db.Foreignkey('parks.id'), nullable=False)
+    date_created = db.Column(db.DateTime(timezone=True), default= datetime.now)
+    # author = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
         return f'<Review {self.email}>'
