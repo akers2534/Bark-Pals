@@ -9,6 +9,8 @@ class User(db.Model):
     username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    #comments = db.relationship('Comment', backref='user', passive_deletes=True)
+    #posts = db.relationship('Post', backref='user', passive_deletes=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
