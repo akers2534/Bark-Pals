@@ -7,44 +7,56 @@ export const Signup = () => {
     e.preventDefault();
   }
   return (
-    <div className="row">
-      <form className="mx-auto col-6 pt-5">
-        <div class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1">
-            Email address
-          </label>
-        </div>
-
-        <div class="form-outline mb-4">
-          <input type="password" id="form2Example2" class="form-control" />
-          <label class="form-label" for="form2Example2">
-            Password
-          </label>
-        </div>
-
-        <button type="button" class="btn btn-primary btn-block mb-4">
+    <form class="row g-3">
+      <div class="col-md-5">
+        <label for="inputEmail4" class="form-label">
+          Email
+        </label>
+        <input type="email" class="form-control" id="inputEmail4" />
+      </div>
+      <div class="col-md-5">
+        <label for="inputPassword4" class="form-label">
+          Password
+        </label>
+        <input type="password" class="form-control" id="inputPassword4" />
+      </div>
+      <div class="col-8">
+        <label for="inputAddress" class="form-label">
+          Address
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="1234 Main St"
+        />
+      </div>
+      <div class="col-md-5">
+        <label for="inputCity" class="form-label">
+          City
+        </label>
+        <input type="text" class="form-control" id="inputCity" />
+      </div>
+      <div class="col-md-3">
+        <label for="inputState" class="form-label">
+          State
+        </label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">
+          Zip
+        </label>
+        <input type="text" class="form-control" id="inputZip" />
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">
           Sign Up!
         </button>
-
-        <div class="text-center">
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-google"></i>
-          </button>
-
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-twitter"></i>
-          </button>
-
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-github"></i>
-          </button>
-        </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };

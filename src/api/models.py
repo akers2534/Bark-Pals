@@ -168,8 +168,8 @@ class PDRequest(db.Model):
     app checks for PDReq(), finds one, creates a Playdate()
     """
     id = db.Column(db.Integer, primary_key=True)
-    sender = db.Column(db.Integer, db.ForeignKey("Owner"))
-    target = db.Column(db.Integer, db.ForeignKey("Owner"))
+    sender = db.Column(db.Integer, db.ForeignKey("owner.id"))
+    target = db.Column(db.Integer, db.ForeignKey("owner.id"))
     is_complete = db.Column(db.Boolean, default=False)
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)

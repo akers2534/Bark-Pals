@@ -53,27 +53,10 @@ export const Login = () => {
         <div class="text-center">
           <p>Not a Bark Pal? </p>
           <span>
-            <p>or sign up with:</p>{" "}
             <Link to="/Signup">
               <a href="#!">Sign Up!</a>
             </Link>
           </span>
-          <br></br>
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-google"></i>
-          </button>
-
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-twitter"></i>
-          </button>
-
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-github"></i>
-          </button>
         </div>
       </form>
     </div>
