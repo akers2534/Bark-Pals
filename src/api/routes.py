@@ -12,6 +12,12 @@ import os
 
 api = Blueprint('api', __name__)
 
+@api.route('/get_identity', methods=["GET"])
+@jwt_required()
+def get_identity():
+    db_owner = Owner.query.filter_by(email=get_jwt_identity()).first()
+    return jsonify(owner=db_owner.serialize())
+
 
 @api.route('/login', methods=['POST'])
 def login():
@@ -140,6 +146,7 @@ def delete_owner(id):
 @api.route('/dogs', methods=['POST'])
 def handle_dogs():
     request_body = request.get_json()
+    db_owner = Owner.query.filter_by(email=get_jwt_identity()).first()
     new_dog=Dog(
         name=request_body['name'],
         img_url=request_body['img_url'],
@@ -147,7 +154,8 @@ def handle_dogs():
         chip_number=request_body['chip_number'],
         weight=request_body['weight'],
         neutered_or_spayed=request_body['neutered_or_spayed'],
-        dog_id=request_body['dog_id'],)
+        dog_id=request_body['dog_id'],
+        owner=db_owner) 
     db.session.add(new_dog)
     db.session.commit()
     return jsonify(new_dog.serialize()), 200
