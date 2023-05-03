@@ -1,8 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Dropdown, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-export const NavbarMain = () => {
+function App() {
   const [showCommentModal, setShowCommentModal] = React.useState(false);
   const handleCommentModalClose = () => setShowCommentModal(false);
   const handleCommentModalShow = () => setShowCommentModal(true);
@@ -65,4 +64,6 @@ export const NavbarMain = () => {
       </Modal>
     </>
   );
-};
+}
+
+export default App;

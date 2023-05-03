@@ -5,3 +5,15 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+body {
+  background-color: #0a2b46;
+}
+
+p {
+  color: yellow;
+}
+
+h1 {
+    color: yellow;
+}
