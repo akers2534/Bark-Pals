@@ -13,10 +13,7 @@ export const Home = () => {
       <p>
         <img src={rigoImageUrl} />
       </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
+
       <p>
         Bark Pals is youe one stop solution to set up play dates, find parks,
         and meet fellow dog lovers
@@ -24,4 +21,3 @@ export const Home = () => {
     </div>
   );
 };
-
